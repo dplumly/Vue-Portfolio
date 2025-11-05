@@ -1,0 +1,1001 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body,
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'LatoWeb', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: #eaeaea;
+    letter-spacing: 2px;
+}
+
+
+h1 {
+    font-size: 3.2rem;
+    /* 40px */
+}
+
+h2 {
+    font-size: 2rem;
+    /* 32px */
+}
+
+h3 {
+    font-size: 1.75rem;
+    /* 24px */
+}
+
+h4 {
+    font-size: 1.0rem;
+    /* 16px */
+    color: #232323;
+    text-align: left;
+    font-family: 'Open-Sans-Regular', sans-serif;
+    line-height: 22px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+h5 {
+    font-size: .9rem;
+    /* 12px */
+}
+
+h6 {
+    font-size: .625rem;
+    /* 10px */
+}
+
+/*===================================
+
+Button
+
+===================================*/
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    font-family: 'LatoWeb', sans-serif;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn-1e {
+    overflow: hidden;
+}
+
+.btn-1e:after {
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #61e3d3;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.btn-1e:hover,
+.btn-1e:active {
+    color: #232323;
+}
+
+.btn-1e:hover:after {
+    height: 260%;
+    opacity: 1;
+}
+
+.btn-1e:active:after {
+    height: 400%;
+    opacity: 1;
+}
+
+.btn-1 {
+    border: 3px solid #232323;
+    color: #232323;
+    z-index: 1;
+    text-align: center;
+    line-height: 22px;
+}
+
+.button-container {
+    margin: 0 auto;
+    display: table;
+}
+
+/*===================================
+
+Project container
+
+===================================*/
+.project-container {
+    position: relative;
+    height: auto;
+    width: 100%;
+    background-color: #232323;
+    overflow: hidden;
+}
+
+.project-container .row {
+    padding: 50px 0;
+}
+
+.project-overview {
+    padding: 40px 0;
+}
+
+.project-landing h1 {
+    color: #eaeaea;
+    text-transform: uppercase;
+    padding-top: 50px;
+    font-family: 'LatoWebLight', sans-serif;
+}
+
+.project-landing h1 span {
+    color: #61e3d3;
+    font-family: 'LatoWebBold', sans-serif;
+}
+
+.gallery ul.row {
+    padding-top: 0;
+}
+
+.company {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.company h3 {
+    margin-bottom: 5px;
+    font-family: 'LatoWebLight', sans-serif;
+}
+
+.company h3 span {
+    font-family: 'LatoWebMedium', sans-serif;
+    color: #61e3d3;
+}
+
+.project-files h3 span {
+    color: #61e3d3;
+}
+
+/*--Work section Globals
+==============================================================================================*/
+.video-description h3,
+.gallery h3,
+.project-files h3 {
+    color: #232323;
+    line-height: 41px;
+    letter-spacing: 4px;
+    text-align: center;
+    font-family: 'LatoWebBlack', sans-serif;
+    font-size: 2.5em;
+}
+
+.youtube-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.youtube-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+/*--Video section
+==============================================================================================*/
+.video-container {
+    background-color: #f3f3f3;
+}
+
+.video-description {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.vimeo {
+    margin: 20px auto 0 auto;
+    display: table;
+}
+
+/*--Project Image Gallery
+==============================================================================================*/
+.gallery {
+    background-color: #eaeaea;
+    position: relative;
+}
+
+.gallery hr {
+    margin: 10px auto 35px auto;
+    width: 225px;
+    background-color: #262626;
+    border: 0 none;
+    height: 2px;
+}
+
+.gallery li {
+    cursor: pointer;
+}
+
+.gallery ul li a {
+    float: left;
+    background: #000;
+    overflow: hidden;
+}
+
+.img-gallery img {
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+}
+
+.img-gallery:hover img {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: .8;
+    cursor: pointer;
+}
+
+.header-copy h4,
+.video-description h4 {
+    padding: 15px 0;
+    text-align: left;
+}
+
+/*--Site Link
+==============================================================================================*/
+.site-link img {
+    max-height: 200px;
+    margin: 0 auto;
+    display: table;
+}
+
+.site-link h4 {
+    margin: 20px auto 0 auto;
+    display: table;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 27px;
+    color: #eaeaea;
+}
+
+/*--Project Files
+==============================================================================================*/
+.project-files {
+    background-color: #f3f3f3;
+}
+
+.bright-white {
+    background-color: #f3f3f3;
+}
+
+.darker-white {
+    background-color: #eaeaea;
+    padding-top: 50px;
+}
+
+/*--Project Files Single
+==============================================================================================*/
+.single-info {
+    max-width: 600px;
+    text-align: right;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+.single-img {
+    position: absolute;
+    left: -170px;
+}
+
+.single-info img {
+    height: 75px;
+    margin: 20px auto 10px auto;
+    display: table;
+}
+
+.single-info h4 {
+    color: #232323;
+    text-align: left;
+    font-family: 'Open-Sans-Regular', sans-serif;
+    letter-spacing: 4px;
+    line-height: 22px;
+    padding: 0 20px;
+}
+
+
+/*--Files associated with project
+==============================================================================================*/
+.left-content,
+.right-content {
+    min-height: 315px;
+    position: relative;
+}
+
+.ripple-section {
+    background-color: #000;
+}
+
+.left-info {
+    max-width: 600px;
+    text-align: right;
+    z-index: 1;
+}
+
+.left-info h4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 254px;
+}
+
+.left-info img,
+.right-info img {
+    height: 75px;
+    margin: 20px auto 40px auto;
+    display: table;
+}
+
+.left-img {
+    max-height: 450px;
+}
+
+.right-img {
+    position: absolute;
+    right: -152px;
+    top: 10px;
+}
+
+/*===================================
+
+Salesforce DF23 
+
+===================================*/
+#df23-main {
+    min-height: 725px;
+    position: relative;
+}
+
+
+#df23-content {
+    padding-top: 0;
+}
+
+#salesforceDF23-landing {
+    position: relative;
+    background: url('../img/projects/df23/backgrounds/df23-landing.jpg') center center no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+.DF23left-img {
+    padding: 70px 30px;
+}
+
+#df23-content .left-info h4 {
+    height: auto;;
+}
+
+#salesforce-section-one {
+    background: url('../img/projects/df23/backgrounds/section-one-bg.jpg') left center no-repeat;
+    background-color: #000;
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+/*--IBM Digital activation globals
+==============================================================================================*/
+/* .project-files h3 span {
+    color: #61e3d3;
+} */
+
+
+/*===================================
+
+IBM 2020 Activations Page
+Watson Harmonic State
+
+===================================*/
+/* #activations-landing {
+    position: relative;
+    background: url('../img/projects/IBMactivations/backgrounds/activations-landing.jpg') left center no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#activations-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.section-one {
+    background: url('../img/projects/IBMactivations/backgrounds/section-one-dust.jpg') right center no-repeat;
+    background-color: #000;
+    min-height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.computer-in-front {
+    z-index: 1;
+}
+
+.computer-in-front img {
+    position: absolute;
+    right: 0;
+    max-height: 340px;
+}
+
+.center-activation-text h4 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 400px;
+    color: #f3f3f3;
+}
+
+.awards {
+    color: #61e3d3;
+}
+
+a.awards {
+    padding: 2px 0 !important;
+} */
+
+
+/*--Systems Backbone and Brains
+==============================================================================================*/
+/* .right-content.ripple-section::before {
+    content: "";
+    background: url('../img/projects/IBMactivations/backgrounds/section-two-bg.jpg') left center no-repeat;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+/*===================================
+
+Chingon Pong Page
+
+===================================*/
+/* #chingon-pong-landing {
+    position: relative;
+    background: url('../img/projects/chingonPong/backgrounds/chingon-pong.jpg') right center no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#chingon-pong-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#chingon-exclamation {
+    position: relative;
+    bottom: 7px;
+    color: #eaeaea;
+}
+
+#chingon-machine {
+    position: absolute;
+    left: -200px;
+    top: -150px;
+    max-height: none;
+} */
+
+/*===================================
+
+Visceral Velocity Page
+
+===================================*/
+/* #visceral_reality-landing {
+    position: relative;
+    background: url('../img/projects/visceral_reality/backgrounds/visceral_reality.jpg') left center no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+    background-position: 0 -193px;
+}
+
+#visceral_reality-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#vr-platform {
+    max-width: 1000px;
+    right: -383px;
+    position: absolute
+}
+
+#haptics {
+    left: -300px;
+    position: absolute;
+    min-width: 615px;
+    max-height: none;
+} */
+
+/*===================================
+
+LC 500 Soundbooth Page
+
+===================================*/
+/* #LC_soundbooth-landing {
+    position: relative;
+    background: url('../img/projects/LC_soundbooth/backgrounds/LC_soundbooth.jpg') center left no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+    background-position: 0 -193px;
+}
+
+#LC_soundbooth-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#soundbooth-site-bg {
+    background: url('../img/projects/LC_soundbooth/backgrounds/sound-wave.jpg') fixed center no-repeat;
+    background-color: #000;
+}
+
+img.soundbooth-right-img {
+    position: absolute;
+    right: -525px;
+    max-width: none;
+}
+
+#soundwave {
+    left: -400px;
+    position: absolute;
+    min-width: 800px;
+} */
+
+/*===================================
+
+Lit IS 
+
+===================================*/
+/* #litIS-landing {
+    position: relative;
+    background: url('../img/projects/LitIS/backgrounds/litIS.jpg') no-repeat center center;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#litIS-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#lit-is-model {
+    left: -400px;
+    position: absolute;
+    min-width: 900px;
+} */
+
+/*===================================
+
+The Huddles Page
+
+===================================*/
+/* #the-huddles-landing {
+    position: relative;
+    background: url('../img/projects/huddles/backgrounds/huddles.jpg') no-repeat center left;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#the-huddles-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#huddle-site-bg {
+    background: url('../img/projects/huddles/backgrounds/huddles-bg.jpg') fixed center no-repeat;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+span#huddle-bar {
+    height: 10px;
+    width: 100%;
+    background: rgb(34, 111, 183, .5);
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+} */
+
+/*===================================
+
+paperproto 
+
+===================================*/
+/* #paperproto-landing {
+    position: relative;
+    background: url('../img/projects/paperproto/backgrounds/paperproto.jpg') no-repeat center center;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#paperproto-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.nine.columns.centered h3 a {
+    color: #61e3d3;
+    background: #262626;
+    padding: 0 6px;
+    line-height: 60px;
+}
+
+#paperproto-site-bg {
+    background: url('../img/projects/paperproto/backgrounds/paperproto-bg.jpg') fixed center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#paperproto-8 {
+    left: -85px;
+    height: 535px;
+    transform: rotate(-5deg);
+    position: absolute;
+} */
+
+/*===================================
+
+Dustin's Words
+
+===================================*/
+/* #dustins-words-landing {
+    position: relative;
+    background: url('../img/projects/dustins-words/backgrounds/dustins-words.jpg') no-repeat center center;
+    min-height: 600px;
+    width: 100%;
+    background-color: #262626;
+}
+
+#dustins-words-landing:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: "";
+    box-shadow: 0px 0px 220px black inset;
+    pointer-events: none;
+    z-index: 1;
+}
+
+#dw-site-bg {
+    background: url('../img/projects/dustins-words/backgrounds/dw-bg.jpg') fixed center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#dustins-words-model {
+    left: -400px;
+    position: absolute;
+    min-width: 900px;
+} */
+
+
+
+/*========================
+
+Responsive
+
+========================*/
+
+/* 1000 */
+@media only screen and (max-width: 62.500em) {
+    .project-landing h1 {
+        padding: 50px 20px 0 20px;
+    }
+
+    .company {
+        padding: 0 20px;
+    }
+
+    .project-copy {
+        padding: 20px;
+    }
+
+    #description {
+        padding: 0 10px;
+    }
+
+    .center-activation-text {
+        margin: 20px 0;
+    }
+
+    .header-copy h4 {
+        margin-top: 20px;
+    }
+
+    .right-info h4 {
+        padding-left: 10px;
+    }
+}
+
+
+/* 768 */
+@media only screen and (max-width: 48.000em) {
+
+    #project-color {
+        display: none;
+    }
+
+    #thumbnails.row .six.columns h2,
+    #thumbnails.row .six.columns h5 {
+        opacity: 1;
+    }
+
+    #thumbnails.row .six.columns img,
+    #thumbnails.row .twelve.columns img {
+        opacity: 1;
+    }
+
+    .gallery ul li a {
+        float: none;
+        margin: 0 auto;
+        display: table
+    }
+
+    .video-description h3,
+    .gallery h3,
+    .project-files h3,
+    .header-copy h4,
+    .left-info,
+    .right-info h4 {
+        padding: 0 20px;
+    }
+
+    .single-info {
+        margin: 0 auto 25px auto;
+    }
+
+    .left-img {
+        display: none;
+    }
+
+    .single-img {
+        position: absolute;
+        left: -369px;
+        top: 20px;
+    }
+
+    .left-content .left-info {
+        max-width: 900px;
+        text-align: right;
+        margin: 0;
+    }
+
+    .left-info h4 {
+        height: auto;
+    }
+
+    .center-activation-text h4 {
+        height: auto;
+    }
+
+    .right-img {
+        display: none;
+    }
+
+    .left-content .row,
+    .right-content .row {
+        padding-top: 0;
+    }
+}
+
+
+/* 500 */
+@media only screen and (max-width: 31.250em) {
+
+    .project-container h4 {
+        font-size: 1.2em;
+        line-height: 28px;
+    }
+
+    .project-landing h1 {
+        line-height: 45px;
+        padding: 50px 20px 0 20px;
+        letter-spacing: 0;
+    }
+
+    .project-container h2 {
+        font-size: 2.5em;
+    }
+
+    .project-container hr {
+        width: 230px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+    }
+}
+
+/* 450px */
+@media only screen and (max-width: 28.125em) {
+    .bg-logo {
+        position: absolute;
+        z-index: 0;
+        opacity: .1;
+        margin: 0 auto;
+        width: 350%;
+    }
+
+    .project-container h2 {
+        font-size: 2em;
+    }
+
+
+    .project-container hr {
+        width: 180px;
+    }
+
+    .single-img {
+        left: -310px;
+    }
+
+    .right-img {
+        top: -100px;
+    }
+
+    .right-info a,
+    .left-info a {
+        padding: 15px 50px;
+    }
+
+    .company h3 {
+        font-size: 1.4rem;
+    }
+
+    .project-files h3,
+    .video-description h3,
+    .gallery h3 {
+        margin: 0;
+    }
+
+    .left-content,
+    .right-content {
+        min-height: auto;
+    }
+
+    .left-content {
+        padding-bottom: 50px;
+    }
+
+    .right-content {
+        padding-top: 50px;
+    }
+
+    .btn {
+        padding: 25px 60px;
+        text-align: center;
+        line-height: 19px;
+        margin: 0 30px 35px 30px;
+    }
+}
+
+
