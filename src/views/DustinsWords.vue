@@ -43,6 +43,8 @@
 
 
             <div class="gallery">
+                <div id="project-color"></div>
+
                 <div class="row">
                     <div class="nine columns centered">
                         <h3>Many iterations to the current device

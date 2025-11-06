@@ -85,30 +85,7 @@
             </div><!-- end video container -->
 
 
-
-            <div class="gallery">
-                <div id="project-color"></div>
-                <div class="row">
-                    <div class="nine columns centered">
-                        <h3>LC 500 Sonic Challenge premiered at SEMA 2016</h3>
-                    </div>
-                </div>
-
-                 <ul class="row">
-                    <li
-                        v-for="(img, i) in lcSoundboothGallery1"
-                        :key="i"
-                        class="four column fadeIn"
-                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
-                        @click="openLightbox(i, lcSoundboothGallery1)"
-                    >
-                        <img :src="img" class="img-gallery" />
-                    </li>
-                </ul>
-            </div><!-- end gallery -->
-
-
-            <div class="gallery">
+             <div class="gallery">
                 <div class="row">
                     <div class="nine columns centered">
                         <h3>Prototype created to for client approval
@@ -122,6 +99,29 @@
                 </div>
 
                 <ul class="row">
+                    <li
+                        v-for="(img, i) in lcSoundboothGallery1"
+                        :key="i"
+                        class="four column fadeIn"
+                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        @click="openLightbox(i, lcSoundboothGallery1)"
+                    >
+                        <img :src="img" class="img-gallery" />
+                    </li>
+                </ul>
+            </div><!-- end gallery -->
+
+
+
+            <div class="gallery">
+                <div id="project-color"></div>
+                <div class="row">
+                    <div class="nine columns centered">
+                        <h3>LC 500 Sonic Challenge premiered at SEMA 2016</h3>
+                    </div>
+                </div>
+
+                 <ul class="row">
                     <li
                         v-for="(img, i) in lcSoundboothGallery2"
                         :key="i"

@@ -43,14 +43,20 @@
 
                 <div class="row">
                     <div class="nine columns centered">
-                        <h3>The Experience</h3>
+                        <h3>The <span>Experience</span></h3>
 
                         <div class="header-copy ten columns centered">
                             <h4>The experience was built to highlight Gemini’s power and consistency. Attendees answered a few Madlibs-style questions, which fed into custom prompts designed to produce a specific look and recurring characters.
                                 
                                 <br>
                                 <br>
+
                                 Once attendees submitted their answers, Gemini generated a unique image they could instantly save via QR code. On a separate display, the latte artist could pull up each attendee’s creation and use it as inspiration to pour a one-of-a-kind foam masterpiece.
+                                
+                                <br>
+                                <br>
+
+                                Below are images from the AI Coffee Art activation and some of other things the GPJ Creative Tech team helped out with.
                             </h4>
                         </div>
                     </div>
@@ -96,15 +102,25 @@ import { ref } from 'vue'
 import VueEasyLightbox from 'vue-easy-lightbox'
 
 const chingonMachineGallery = [
-  '/img/projects/google/work/1.jpg',
-  '/img/projects/google/work/2.jpg',
-  '/img/projects/google/work/3.png',
-  '/img/projects/google/work/4.png',
-  '/img/projects/google/work/5.png',
-  '/img/projects/google/work/6.png',
-  '/img/projects/google/work/7.png',
-  '/img/projects/google/work/8.png',
-  '/img/projects/google/work/9.png',
+    '/img/projects/google/work/1.jpg',
+    '/img/projects/google/work/2.jpg',
+    '/img/projects/google/work/3.png',
+    '/img/projects/google/work/4.png',
+    '/img/projects/google/work/5.png',
+    '/img/projects/google/work/6.png',
+    '/img/projects/google/work/7.png',
+    '/img/projects/google/work/8.png',
+    '/img/projects/google/work/9.png',
+    '/img/projects/google/work/10.jpeg',
+    '/img/projects/google/work/11.jpeg',
+    '/img/projects/google/work/12.jpeg',
+    '/img/projects/google/work/13.jpeg',
+    '/img/projects/google/work/14.jpeg',
+    '/img/projects/google/work/15.jpeg',
+    '/img/projects/google/work/16.jpeg',
+    '/img/projects/google/work/17.jpeg',
+    '/img/projects/google/work/18.jpeg',
+
 ]
 
 

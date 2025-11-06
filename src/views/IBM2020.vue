@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="nine columns centered">
                         <h3>
-                            Watson <span>Harmonic State</span>
+                            Watson Harmonic State
                         </h3>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="nine columns centered">
                         <h3>
-                            Systems <span>Backbone and Brains</span>
+                            Systems Backbone and Brains
                         </h3>
                     </div>
                 </div>
