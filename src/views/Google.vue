@@ -95,7 +95,6 @@
 
 
 
-
 <script setup>
 import MoreProjects from '@/components/MoreProjects.vue'
 import { ref } from 'vue'
@@ -162,18 +161,6 @@ Google Page
     z-index: 1;
 }
 
-/* #chingon-exclamation {
-    position: relative;
-    bottom: 7px;
-    color: #eaeaea;
-}
-
-#chingon-machine {
-    position: absolute;
-    left: -200px;
-    top: -150px;
-    max-height: none;
-} */
 
 /*========================
 
@@ -187,14 +174,6 @@ Responsive
         background: url('../img/projects/google/backgrounds/google-big.jpg') right center no-repeat;
     }
 }
-
-/* 768 */
-/* @media only screen and (max-width: 48.000em) {
-
-    .chingon.left-img {
-        display: none;
-    }
-} */
 
 /* 500 */
 @media only screen and (max-width: 31.250em) {

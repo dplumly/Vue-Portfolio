@@ -402,49 +402,6 @@ Project container
     top: 10px;
 }
 
-/*===================================
-
-Salesforce DF23 
-
-===================================*/
-/* #df23-main {
-    min-height: 725px;
-    position: relative;
-}
-
-
-#df23-content {
-    padding-top: 0;
-}
-
-#salesforceDF23-landing {
-    position: relative;
-    background: url('../img/projects/df23/backgrounds/df23-landing.jpg') center center no-repeat;
-    min-height: 600px;
-    width: 100%;
-    background-color: #262626;
-}
-
-.DF23left-img {
-    padding: 70px 30px;
-}
-
-#df23-content .left-info h4 {
-    height: auto;;
-}
-
-#salesforce-section-one {
-    background: url('../img/projects/df23/backgrounds/section-one-bg.jpg') left center no-repeat;
-    background-color: #000;
-    min-height: 500px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
-
-
-
 /*========================
 
 Responsive

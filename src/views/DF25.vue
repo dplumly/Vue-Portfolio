@@ -90,11 +90,6 @@
 		</div>
 
 
-
-
-
-
-
         <!-- Liv Golf-->
         <div class="project-files">
             <div class="gallery">
@@ -308,19 +303,6 @@ Salesforce DF23
 .df25-content .left-info h4 {
     height: auto;
 }
-
-/* #salesforce-section-one {
-    background: url('../img/projects/df25/backgrounds/section-one-bg.jpg') left center no-repeat;
-    background-color: #000;
-    min-height: 500px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
-
-
-
 
 #salesforce-section-one {
     background: url('../img/projects/df25/backgrounds/section-one-bg.jpg') fixed center no-repeat;

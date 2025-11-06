@@ -169,14 +169,6 @@ import MoreProjects from '@/components/MoreProjects.vue'
 </script>
 
 <style scoped>
-
-/*--IBM Digital activation globals
-==============================================================================================*/
-/* .project-files h3 span {
-    color: #61e3d3;
-} */
-
-
 /*===================================
 
 IBM 2020 Activations Page
