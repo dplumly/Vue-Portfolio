@@ -98,17 +98,18 @@
                     </div>
                 </div>
 
-                <ul class="row">
-                    <li
+                <div class="gallery-grid">
+                    <div
                         v-for="(img, i) in lcSoundboothGallery1"
                         :key="i"
-                        class="four column fadeIn"
-                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
                         @click="openLightbox(i, lcSoundboothGallery1)"
                     >
-                        <img :src="img" class="img-gallery" />
-                    </li>
-                </ul>
+                        <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 
 
@@ -121,17 +122,18 @@
                     </div>
                 </div>
 
-                 <ul class="row">
-                    <li
+                <div class="gallery-grid">
+                    <div
                         v-for="(img, i) in lcSoundboothGallery2"
                         :key="i"
-                        class="four column fadeIn"
-                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i + lcSoundboothGallery1.length)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
                         @click="openLightbox(i, lcSoundboothGallery2)"
                     >
-                        <img :src="img" class="img-gallery" />
-                    </li>
-                </ul>
+                        <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 
 
@@ -245,6 +247,12 @@ function openLightbox(index, images) {
     currentImages.value = images
     lightboxIndex.value = index
     lightboxVisible.value = true
+}
+
+// 📐 Get dynamic image size for organic grid layout
+function getImageSize(index) {
+  const sizePattern = ['small', 'medium', 'large', 'tall', 'wide', 'medium', 'large', 'small', 'tall', 'medium', 'wide', 'large', 'small']
+  return sizePattern[index % sizePattern.length]
 }
 
 

@@ -62,27 +62,28 @@
 
             <div class="gallery">
                 <div id="project-color"></div>
-                <ul class="row">
-
-                    <div class="row">
-                        <div class="nine columns centered">
-                            <h3>Premiered at the Long Beach Grand Prix
-                            </h3>
-                            <div class="header-copy ten columns centered">
-                                <h4>It has also been ported to other devices such as Samsung Gear for other events.</h4>
-                            </div>
+                <div class="row">
+                    <div class="nine columns centered">
+                        <h3>Premiered at the Long Beach Grand Prix
+                        </h3>
+                        <div class="header-copy ten columns centered">
+                            <h4>It has also been ported to other devices such as Samsung Gear for other events.</h4>
                         </div>
                     </div>
+                </div>
 
-
-                    <li 
+                <div class="gallery-grid">
+                    <div 
                         v-for="(img, i) in visceralRealityGallery1" 
                         :key="i" 
-                        class="four column fadeIn"
-                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }">
-                        <img :src="img" class="img-gallery" @click="openLightbox(i, visceralRealityGallery1)" />
-                    </li>
-                </ul>
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        @click="openLightbox(i, visceralRealityGallery1)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 
 
@@ -99,15 +100,18 @@
                 </div>
 
 
-                <ul class="row">
-                    <li 
+                <div class="gallery-grid">
+                    <div 
                         v-for="(img, i) in visceralRealityGallery2" 
                         :key="i" 
-                        class="four column fadeIn"
-                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }">
-                        <img :src="img" class="img-gallery" @click="openLightbox(i, visceralRealityGallery2)" />
-                    </li>
-                </ul>
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i + visceralRealityGallery1.length)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        @click="openLightbox(i, visceralRealityGallery2)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 
 
@@ -219,6 +223,12 @@ function openLightbox(index, imagesArray) {
     currentImages.value = imagesArray
     lightboxIndex.value = index
     lightboxVisible.value = true
+}
+
+// 📐 Get dynamic image size for organic grid layout
+function getImageSize(index) {
+  const sizePattern = ['small', 'medium', 'large', 'tall', 'wide', 'medium', 'large', 'small', 'tall', 'medium', 'wide', 'large', 'small']
+  return sizePattern[index % sizePattern.length]
 }
 </script>
 

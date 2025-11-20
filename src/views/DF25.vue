@@ -46,11 +46,9 @@
 		<div class="project-files">
             <div class="gallery">
                 <div id="project-color"></div>
-                <ul class="row">
-
-                    <div class="row">
-                        <div class="nine columns centered">
-                            <h3>Agentforce Voice</h3>
+                <div class="row">
+                    <div class="nine columns centered">
+                        <h3>Agentforce Voice</h3>
 
                             <div class="header-copy ten columns centered">
                                 
@@ -73,19 +71,21 @@
 
                                 </h4>
                             </div>
-                        </div>
                     </div>
+                </div>
 
-
-                    <li
-                    v-for="(img, i) in voice"
-                    :key="i"
-                    class="four column fadeIn"
-                     v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
-                    @click="openLightbox(i, voice)">
-                    <img :src="img" class="img-gallery" />
-                </li>
-                </ul>
+                <div class="gallery-grid">
+                    <div
+                        v-for="(img, i) in voice"
+                        :key="i"
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        @click="openLightbox(i, voice)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Voice image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 		</div>
 
@@ -94,11 +94,9 @@
         <div class="project-files">
             <div class="gallery">
                 <div id="project-color"></div>
-                <ul class="row">
-
-                    <div class="row">
-                        <div class="nine columns centered">
-                            <h3>Data Cloud</h3>
+                <div class="row">
+                    <div class="nine columns centered">
+                        <h3>Data Cloud</h3>
 
                             <div class="header-copy ten columns centered">
                                 
@@ -119,19 +117,22 @@
 
                                 </h4>
                             </div>
-                        </div>
                     </div>
+                </div>
 
-                    <li
+                <div class="gallery-grid">
+                    <div
                         v-for="(img, i) in golf"
                         :key="i"
-                        class="four column fadeIn"
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i + voice.length)}`"
                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
-                        @click="openLightbox(i, golf)">
-                        <img :src="img" class="img-gallery" />
-                    </li>
+                        @click="openLightbox(i, golf)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Golf image ${i + 1}`" />
+                    </div>
 			
-                </ul>
+                </div>
             </div><!-- end gallery -->
 		</div>
 
@@ -153,29 +154,29 @@
         <div class="project-files">
             <div class="gallery">
                 <div id="project-color"></div>
-                <ul class="row">
-
-                    <div class="row">
-                        <div class="nine columns centered">
-                            <h3>Dreamforce 2025 Activations</h3>
+                <div class="row">
+                    <div class="nine columns centered">
+                        <h3>Dreamforce 2025 Activations</h3>
 
                             <div class="header-copy ten columns centered">
                                <h4>Here are some more of the other fantasic activations the GPJ Creative Tech team worked on.</h4> 
-              
                             </div>
-                        </div>
                     </div>
+                </div>
 
-                    <li
+                <div class="gallery-grid">
+                    <div
                         v-for="(img, i) in activations"
                         :key="i"
-                        class="four column fadeIn"
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i + voice.length + golf.length)}`"
                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
-                        @click="openLightbox(i, activations)">
-                        <img :src="img" class="img-gallery" />
-                    </li>
+                        @click="openLightbox(i, activations)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Activation image ${i + 1}`" />
+                    </div>
 			
-                </ul>
+                </div>
             </div><!-- end gallery -->
 		</div>
 
@@ -269,6 +270,12 @@ function openLightbox(index, images) {
     currentImages.value = images
     lightboxIndex.value = index
     lightboxVisible.value = true
+}
+
+// 📐 Get dynamic image size for organic grid layout
+function getImageSize(index) {
+  const sizePattern = ['small', 'medium', 'large', 'tall', 'wide', 'medium', 'large', 'small', 'tall', 'medium', 'wide', 'large', 'small']
+  return sizePattern[index % sizePattern.length]
 }
 
 </script>

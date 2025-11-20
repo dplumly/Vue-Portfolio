@@ -57,15 +57,18 @@
                 </div>
 
 
-                <ul class="row">
-                    <li 
+                <div class="gallery-grid">
+                    <div 
                         v-for="(img, i) in dustinsWordsImages" 
                         :key="i" 
-                        class="four column"
-                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }">
-                        <img :src="img" class="img-gallery" @click="openLightbox(i)" />
-                    </li>
-                </ul>
+                        class="gallery-item fadeIn"
+                        :class="`gallery-item--${getImageSize(i)}`"
+                        v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
+                        @click="openLightbox(i)"
+                    >
+                        <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
+                    </div>
+                </div>
             </div><!-- end gallery -->
 
 
@@ -185,6 +188,12 @@ function openLightbox(index) {
     lightboxIndex.value = index;
     lightboxVisible.value = true;
 }
+
+// 📐 Get dynamic image size for organic grid layout
+function getImageSize(index) {
+  const sizePattern = ['small', 'medium', 'large', 'tall', 'wide', 'medium', 'large', 'small', 'tall', 'medium', 'wide', 'large', 'small']
+  return sizePattern[index % sizePattern.length]
+}
 </script>
 
 <style scoped>
@@ -252,8 +261,6 @@ Responsive
     .section-one {
         background: url('../img/projects/IBMactivations/backgrounds/section-one-dust-mobile.jpg') center center no-repeat;
     }
-
-    
 }
 
 </style>
