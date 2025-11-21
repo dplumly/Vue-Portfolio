@@ -17,6 +17,10 @@ a {
     font-family: 'LatoWeb', sans-serif;
 }
 
+a, a:hover, a:focus, a:active {
+  cursor: none !important;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }  
@@ -73,7 +77,7 @@ Button
     font-size: inherit;
     color: inherit;
     background: none;
-    cursor: pointer;
+    /* cursor: pointer; */
     padding: 25px 80px;
     display: inline-block;
     margin: 15px 30px;
@@ -302,7 +306,7 @@ Project container
 .gallery-item {
     position: relative;
     overflow: hidden;
-    cursor: pointer;
+    cursor: none;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

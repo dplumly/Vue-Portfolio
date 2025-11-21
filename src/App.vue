@@ -1,16 +1,19 @@
 <template>
   <div id="app">
+    <!-- Custom Cursor -->
+    <CustomCursor />
+    
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container">
-      <div class="scroll-progress-bar" :style="{ width: scrollProgress + '%' }"></div>
+        <div class="scroll-progress-bar" :style="{ width: scrollProgress + '%' }"></div>
     </div>
     
     <Nav />
-        <transition name="fade" mode="out-in">
+    <transition name="fade" mode="out-in">
         <div :key="$route.path">
             <router-view />
         </div>
-        </transition>
+    </transition>
     <Footer />
   </div>
 </template>
@@ -19,6 +22,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Nav from './components/Nav.vue'
 import Footer from './components/Footer.vue'
+import CustomCursor from './components/CustomCursor.vue'
 
 const scrollProgress = ref(0)
 
@@ -42,23 +46,51 @@ onUnmounted(() => {
 <style>
 /*===================================
 
+Custom Cursor Global Styles
+
+===================================*/
+body {
+    cursor: none;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 255, 255, 0.04) 0px,
+        rgba(0, 255, 255, 0.04) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0.4;
+}
+
+/*===================================
+
 Scroll Progress Bar
 
 ===================================*/
 .scroll-progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #9e1c2c;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #9e1c2c;
+    z-index: 9999;
 }
 
 .scroll-progress-bar {
-  height: 100%;
-  background-color: #61e3d3;
-  transition: width 0.1s ease;
+    height: 100%;
+    background-color: #61e3d3;
+    transition: width 0.1s ease;
 }
 
 /*===================================
@@ -67,16 +99,16 @@ Page transitions
 
 ===================================*/
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
 }
 .fade-enter-from, .fade-leave-to {
-  opacity: 0;
+    opacity: 0;
 }
 .fade-enter-to, .fade-leave-from {
-  opacity: 1;
+    opacity: 1;
 }
 
 #app {
-  overflow-x: hidden; 
+    overflow-x: hidden; 
 }
 </style>

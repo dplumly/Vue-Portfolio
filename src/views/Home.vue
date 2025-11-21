@@ -21,11 +21,11 @@
             <h2>Hey <span>there</span></h2>
             <br /><br />
             <h4>
-                I grew up in Virginia, with a love of toys and plenty of scrap wood. I started out building playhouses and display cases for my toy collection, and I’ve basically been making stuff ever since. (Yes, I still collect toys. And yes, I make toys and props.)
+                I grew up in Virginia, with a love of toys and plenty of scrap wood. I started out building playhouses and display cases for my toy collection, and I've basically been making stuff ever since. (Yes, I still collect toys. And yes, I make toys and props.)
                 <br /><br />
                 That early love of building led me to college, where I discovered a way to channel it all into something bigger. Advertising gave me a playground where creativity, tech, storytelling and making could all live together.
                 <br /><br />
-                Since then, I’ve built everything from digital tools to physical installations, and the best part? It still feels like play. I work hard, but it rarely feels like “work.”
+                Since then, I've built everything from digital tools to physical installations, and the best part? It still feels like play. I work hard, but it rarely feels like "work."
             </h4>
             </div>
       </div>
@@ -58,70 +58,210 @@
         </div>
 </template>
 
-<script setup>
+<script>
+import { onMounted, onUnmounted } from 'vue'
 
+export default {
+  name: 'Home',
+  setup() {
+    const PARTICLE_MIN = 8
+    const PARTICLE_MAX = 16
+    const RADIUS_MIN = 20
+    const RADIUS_MAX = 90
 
-const projects = [
-    {
+    const handleMouseDown = (e) => {
+      const particleCount = PARTICLE_MIN + Math.floor(Math.random() * (PARTICLE_MAX - PARTICLE_MIN))
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div')
+        particle.className = 'binary-burst'
+        particle.dataset.text = ''
+
+        const binary = Array.from({ length: 2 + Math.floor(Math.random() * 4) })
+          .map(() => (Math.random() > 0.5 ? '1' : '0'))
+          .join('')
+
+        particle.textContent = binary
+        particle.dataset.text = binary
+
+        particle.style.left = `${e.clientX}px`
+        particle.style.top = `${e.clientY}px`
+
+        const angle = Math.random() * Math.PI * 2
+        const radius = RADIUS_MIN + Math.random() * (RADIUS_MAX - RADIUS_MIN)
+        const tx = Math.cos(angle) * radius
+        const ty = Math.sin(angle) * radius
+
+        particle.style.setProperty('--tx', `${tx}px`)
+        particle.style.setProperty('--ty', `${ty}px`)
+
+        const duration = 0.7 + Math.random() * 0.6
+        const delay = Math.random() * 0.1
+        particle.style.setProperty('--particle-duration', `${duration}s`)
+        particle.style.animationDelay = `${delay}s`
+
+        const hueShift = Math.floor(Math.random() * 360)
+        particle.style.filter = `hue-rotate(${hueShift}deg)`
+
+        document.body.appendChild(particle)
+
+        setTimeout(() => {
+          particle.remove()
+        }, (duration + delay) * 1000)
+      }
+    }
+
+    onMounted(() => {
+      document.addEventListener('mousedown', handleMouseDown)
+    })
+
+    onUnmounted(() => {
+      document.removeEventListener('mousedown', handleMouseDown)
+    })
+
+    const projects = [
+      {
         link: "/df25",
         image: "/img/projects/df25/dreamforce25.jpg",
         alt: "df25 project image",
         title: "Dream<span>force 25</span>",
         subtitle: "Leading the team Dreamforce 2025",
-    },
-    {
+      },
+      {
         link: "/google",
         image: "/img/projects/google/google.jpg",
         alt: "google project image",
         title: "Google<span> AI Photo</span>",
         subtitle: "Google Next AI Photo experience",
-    },
-    {
+      },
+      {
         link: "/ibm2020",
         image: "/img/projects/IBMactivations/activations.jpg",
         alt: "IBM 2020 Digital Activations",
         title: "IBM<span> 2020</span>",
         subtitle: "Web Activations",
-    },
-    {
+      },
+      {
         link: "/lexussoundbooth",
         image: "/img/projects/LC_soundbooth/LC_soundbooth.jpg",
         alt: "soundbooth project image: photo by Matt Hartz",
         title: "Sound<span> Booth</span>",
         subtitle: "LC 500 Immersive audio experience",
-    },
-        {
+      },
+      {
         link: "/litcar",
         image: "/img/projects/LitIS/litIS.jpg",
         alt: "Lexus Lit IS",
         title: "Lexus Lit<span> IS</span>",
         subtitle: "41,999 LEDs on an Lexus IS",
-    },
-        {
+      },
+      {
         link: "/visceralreality",
         image: "/img/projects/visceral_reality/visceral_reality.jpg",
         alt: "Lexus Visceral Reality",
         title: "Visceral<span> Reality</span>",
         subtitle: "Lexus RC F hot lap in 360",
-    },
-        {
+      },
+      {
         link: "/dustinswords",
         image: "/img/projects/dustins-words/dustins_words.jpg",
         alt: "Dustin's Words Device",
         title: "Dustin's<span> Words</span>",
         subtitle: "Helping give autism a voice",
-    },
-        {
+      },
+      {
         link: "/chingongpong",
         image: "/img/projects/chingonPong/chingon-pong.jpg",
         alt: "chingon-pong beer pong for adults",
         title: "Chingong<span> Pong</span>",
         subtitle: "Four Corner Brewery Beer Pong",
-    },
-]
+      },
+    ]
+
+    return {
+      projects
+    }
+  }
+}
 </script>
 
 <style>
+/*===================================
+
+Binary Burst Particle Effects (Home Page Only)
+
+===================================*/
+.binary-burst {
+  position: fixed;
+  color: #0ff;
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 9998;
+  transform-origin: center;
+  animation:
+    particle-pop var(--particle-duration, 0.9s) ease-out forwards,
+    glitch-color 0.35s linear infinite;
+  text-shadow:
+    1px 0 #9e1c2b,
+    -1px 0 #00ffff,
+    0 0 8px currentColor;
+}
+
+.binary-burst::before,
+.binary-burst::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.binary-burst::before {
+  color: #9e1c2b;
+  clip-path: inset(0 0 60% 0);
+  transform: translate(-1px, -1px);
+  animation: glitch-slice 0.6s steps(2, end) infinite;
+}
+
+.binary-burst::after {
+  color: #00f7ff;
+  clip-path: inset(40% 0 0 0);
+  transform: translate(1px, 1px);
+  animation: glitch-slice 0.45s steps(2, end) infinite reverse;
+}
+
+@keyframes glitch-color {
+  0%, 100% { filter: hue-rotate(0deg); }
+  33% { filter: hue-rotate(90deg); }
+  66% { filter: hue-rotate(180deg); }
+}
+
+@keyframes glitch-slice {
+  0% { clip-path: inset(0 0 70% 0); transform: translate(-2px, -2px); }
+  25% { clip-path: inset(10% 0 50% 0); transform: translate(2px, 1px); }
+  50% { clip-path: inset(40% 0 20% 0); transform: translate(-1px, 2px); }
+  75% { clip-path: inset(30% 0 30% 0); transform: translate(1px, -2px); }
+  100% { clip-path: inset(0 0 70% 0); transform: translate(0, 0); }
+}
+
+@keyframes particle-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate(0, 0);
+  }
+  45% {
+    opacity: 1;
+    transform: scale(1.05) translate(var(--tx, 0px), var(--ty, 0px));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.85) translate(calc(var(--tx, 0px) * 1.15), calc(var(--ty, 0px) * 1.15));
+  }
+}
+
 /*===================================
 
 Landing Page
@@ -351,7 +491,7 @@ Landing Page Thumbnails
     -o-transform: scale(1.1);
     transform: scale(1.1);
     opacity: 1;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 /*========================
