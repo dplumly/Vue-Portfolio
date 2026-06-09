@@ -70,6 +70,10 @@
                         <router-link to="/" @click="closeMenu">HOME</router-link>
                     </li>
                     <li>
+                        <img src="/img/icons/nav-icons/ddk.svg" alt="Workday ddk Icon" />
+                        <router-link to="/ddk" @click="closeMenu">Workday DDK</router-link>
+                    </li>
+                    <li>
                         <img src="/img/icons/nav-icons/salesforce.svg" alt="Salesforce Icon" />
                         <router-link to="/df25" @click="closeMenu">DF25</router-link>
                     </li>
@@ -93,10 +97,10 @@
                         <img src="/img/icons/nav-icons/visceral-reality.svg" alt="visceral reality Icon" />
                         <router-link to="/visceralreality" @click="closeMenu">Visceral Reality</router-link>
                     </li>
-                    <li>
+                    <!-- <li>
                         <img src="/img/icons/nav-icons/dustins-words.svg" alt="dustins words Icon" />
                         <router-link to="/dustinswords" @click="closeMenu">Dustin's Words</router-link>
-                    </li>
+                    </li> -->
                     <li>
                         <img src="/img/icons/nav-icons/chingon-pong.svg" alt="Chingon Pong Icon" />
                         <router-link to="/chingongpong" @click="closeMenu">Chingon Pong</router-link>

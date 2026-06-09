@@ -120,6 +120,13 @@ export default {
     })
 
     const projects = [
+        {
+        link: "/ddk",
+        image: "/img/projects/ddk/ddk.png",
+        alt: "Digial badge",
+        title: "Workday<span> DevCon DDK</span>",
+        subtitle: "Giving developers a playground",
+      },
       {
         link: "/df25",
         image: "/img/projects/df25/dreamforce25.jpg",
@@ -162,13 +169,13 @@ export default {
         title: "Visceral<span> Reality</span>",
         subtitle: "Lexus RC F hot lap in 360",
       },
-      {
-        link: "/dustinswords",
-        image: "/img/projects/dustins-words/dustins_words.jpg",
-        alt: "Dustin's Words Device",
-        title: "Dustin's<span> Words</span>",
-        subtitle: "Helping give autism a voice",
-      },
+    //   {
+    //     link: "/dustinswords",
+    //     image: "/img/projects/dustins-words/dustins_words.jpg",
+    //     alt: "Dustin's Words Device",
+    //     title: "Dustin's<span> Words</span>",
+    //     subtitle: "Helping give autism a voice",
+    //   },
       {
         link: "/chingongpong",
         image: "/img/projects/chingonPong/chingon-pong.jpg",
@@ -466,6 +473,7 @@ Landing Page Thumbnails
     background: #000;
     overflow: hidden;
     height: auto;
+    border-radius: 15px;
 }
 
 #thumbnails figurecaption h2 span {

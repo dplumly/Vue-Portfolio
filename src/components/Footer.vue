@@ -86,7 +86,7 @@
 			</li>
 		</ul>
 		<div id="footer-info" class="column eight centered">
-			<p>COPYRIGHT 2025 | DONNIE PLUMLY</p>
+			<p>COPYRIGHT 2026 | DONNIE PLUMLY</p>
 			<p>Think, Make, Repeat.</p>
 		</div>
 	</footer>

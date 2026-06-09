@@ -6,8 +6,10 @@ import IBM2020 from '../views/IBM2020.vue'
 import LexusSoundbooth from '../views/LexusSoundbooth.vue'
 import Litcar from '../views/Litcar.vue'
 import VisceralReality from '../views/VisceralReality.vue'
-import DustinsWords from '../views/DustinsWords.vue'
+// import DustinsWords from '../views/DustinsWords.vue'
 import ChingongPong from '../views/ChingongPong.vue'
+import Ddk from '../views/Ddk.vue'
+
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
@@ -18,7 +20,8 @@ const routes = [
     { path: '/litcar', name: 'Litcar', component: Litcar },
     { path: '/visceralreality', name: 'VisceralReality', component: VisceralReality },
     { path: '/chingongpong', name: 'ChingongPong', component: ChingongPong },
-    { path: '/dustinswords', name: 'DustinsWords', component: DustinsWords },
+    // { path: '/dustinswords', name: 'DustinsWords', component: DustinsWords },
+    { path: '/ddk', name: 'Ddk', component: Ddk },
 ]
 
 const router = createRouter({

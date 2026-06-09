@@ -64,12 +64,12 @@
 
                 <div class="gallery-grid">
                     <div
-                        v-for="(img, i) in chingonMachineGallery"
+                        v-for="(img, i) in googleGallery"
                         :key="i"
                         class="gallery-item fadeIn"
                         :class="`gallery-item--${getImageSize(i)}`"
                         v-scroll-reveal="{ delay: Math.floor(i / 3) * 200 }"
-                        @click="openLightbox(i, chingonMachineGallery)"
+                        @click="openLightbox(i, googleGallery)"
                     >
                         <img :src="img" class="img-gallery" :alt="`Gallery image ${i + 1}`" />
                     </div>
@@ -101,7 +101,7 @@ import MoreProjects from '@/components/MoreProjects.vue'
 import { ref } from 'vue'
 import VueEasyLightbox from 'vue-easy-lightbox'
 
-const chingonMachineGallery = [
+const googleGallery = [
     '/img/projects/google/work/1.jpg',
     '/img/projects/google/work/2.jpg',
     '/img/projects/google/work/3.png',
