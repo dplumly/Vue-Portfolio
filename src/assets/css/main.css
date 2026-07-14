@@ -17,9 +17,9 @@ a {
     font-family: 'LatoWeb', sans-serif;
 }
 
-a, a:hover, a:focus, a:active {
+/* a, a:hover, a:focus, a:active {
   cursor: none !important;
-}
+} */
 
 ::-webkit-scrollbar {
     display: none;
@@ -251,44 +251,6 @@ Project container
     background-color: #eaeaea;
     position: relative;
 }
-/* 
-.gallery hr {
-    margin: 10px auto 35px auto;
-    width: 225px;
-    background-color: #262626;
-    border: 0 none;
-    height: 2px;
-}
-
-.gallery li {
-    cursor: pointer;
-}
-
-.gallery ul li a {
-    float: left;
-    background: #000;
-    overflow: hidden;
-}
-
-.img-gallery img {
-    -webkit-transition: .3s ease-in-out;
-    -moz-transition: .3s ease-in-out;
-    -o-transition: .3s ease-in-out;
-    transition: .3s ease-in-out;
-    -moz-transform: scale(1);
-    -webkit-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-}
-
-.img-gallery:hover img {
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: .8;
-    cursor: pointer;
-} */
 
 /*--Dynamic Gallery Grid
 ==============================================================================================*/
@@ -306,7 +268,7 @@ Project container
 .gallery-item {
     position: relative;
     overflow: hidden;
-    cursor: none;
+    /* cursor: none; */
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

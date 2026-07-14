@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Custom Cursor -->
-    <CustomCursor />
+    <!-- <CustomCursor /> -->
     
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress-container">
@@ -22,7 +22,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import Nav from './components/Nav.vue'
 import Footer from './components/Footer.vue'
-import CustomCursor from './components/CustomCursor.vue'
+// import CustomCursor from './components/CustomCursor.vue'
 
 const scrollProgress = ref(0)
 
@@ -49,7 +49,7 @@ onUnmounted(() => {
 Custom Cursor Global Styles
 
 ===================================*/
-body {
+/* body {
     cursor: none;
 }
 
@@ -70,7 +70,7 @@ body::before {
     pointer-events: none;
     z-index: 10000;
     opacity: 0.4;
-}
+} */
 
 /*===================================
 

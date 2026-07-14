@@ -198,7 +198,7 @@ export default {
 Binary Burst Particle Effects (Home Page Only)
 
 ===================================*/
-.binary-burst {
+/* .binary-burst {
   position: fixed;
   color: #0ff;
   font-size: 16px;
@@ -267,7 +267,7 @@ Binary Burst Particle Effects (Home Page Only)
     opacity: 0;
     transform: scale(0.85) translate(calc(var(--tx, 0px) * 1.15), calc(var(--ty, 0px) * 1.15));
   }
-}
+} */
 
 /*===================================
 
@@ -499,7 +499,7 @@ Landing Page Thumbnails
     -o-transform: scale(1.1);
     transform: scale(1.1);
     opacity: 1;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 /*========================
